@@ -1,0 +1,418 @@
+/* General */
+/* Contenedor principal */
+
+:root {
+
+    --btm0: #b9ebff;
+    --btm: #89ddff;
+    --bg: #4fbfeb;
+    --hvr1: #5fa6f8;
+    --hvr2: #1b85ff;
+}
+
+
+.contenedor-registro {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    /* Aumentamos el ancho al 95% de la página */
+    max-width: 1100px;
+    /* Permitimos que sea más ancho en pantallas grandes */
+    padding: 30px;
+    padding: 100px 30px;
+    /* Ajustamos el padding para mayor espacio interno */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Espaciado entre elementos */
+    margin: 100px auto;
+    margin-bottom: 0px;
+
+    /* Centramos el formulario con márgenes automáticos */
+}
+
+/* ...existing code... */
+
+/* Cambia el fondo a un gradiente más suave */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(../img/blue-orange-geometric-professional-background-free-vector.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    padding: 20px;
+    /* ...existing code... */
+}
+
+/* Animación de fade-in para el contenedor principal */
+.contenedor-registro {
+    /* ...existing code... */
+    animation: fadeIn 1s ease;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Encabezado */
+.encabezado-registro h1 {
+    text-align: center;
+    font-size: 1.8em;
+    padding-bottom: 20px;
+    /* Reducimos el tamaño de la fuente */
+    color: var(--hvr2);
+}
+
+.pasos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* Reducimos el espacio entre pasos */
+    margin-bottom: 15px;
+    /* Reducimos el margen inferior */
+}
+
+.paso {
+    text-align: center;
+    color: #bbb;
+}
+
+.paso.activo {
+    color: var(--hvr2);
+}
+
+.numero-paso {
+    width: 35px;
+    /* Reducimos el tamaño del círculo */
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px;
+    font-weight: bold;
+    background: #f9f9f9;
+}
+
+.paso.activo .numero-paso {
+    border-color: var(--hvr1);
+    background: var(--hvr2);
+    color: white;
+}
+
+.ya-miembro {
+    text-align: center;
+    font-size: 0.8em;
+    /* Reducimos el tamaño de la fuente */
+}
+
+.ya-miembro a {
+    color: var(--hvr2);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Formulario */
+.grupo-formulario {
+    margin-bottom: 10px;
+    /* Reducimos el margen inferior */
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    /* Reducimos el tamaño de la fuente */
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    /* Reducimos el padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    /* Reducimos el tamaño de la fuente */
+}
+
+textarea {
+    resize: none;
+    height: 70px;
+    /* Reducimos la altura */
+}
+
+/* Estilo personalizado para selección de género */
+.grupo-radio {
+    display: flex;
+    gap: 24px;
+    margin: 10px 0 20px 0;
+}
+
+.radio-genero {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+    position: relative;
+    padding-left: 28px;
+    user-select: none;
+}
+
+.radio-genero input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-genero .custom-radio {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background: var(--btm0);
+    border: 2px solid var(--btm);
+    border-radius: 50%;
+    transition: border-color 0.2s;
+}
+
+.radio-genero input[type="radio"]:checked~.custom-radio {
+    border-color: var(--btm);
+    background: var(--hvr1);
+}
+
+.radio-genero .custom-radio::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.radio-genero input[type="radio"]:checked~.custom-radio::after {
+    display: block;
+
+}
+
+/* Animación suave para el radio de género */
+.radio-genero .custom-radio {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background: var(--btm0);
+    border: 2px solid var(--btm);
+    border-radius: 50%;
+    transition: border-color 0.2s, background 0.2s;
+    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+}
+
+.radio-genero input[type="radio"]:checked~.custom-radio {
+    border-color: var(--bg);
+    background: var(--btm);
+    box-shadow: 0 0 0 6px rgba(255, 152, 0, 0.15);
+    transition: box-shadow 0.3s cubic-bezier(.4, 1.7, .6, 1), border-color 0.2s, background 0.2s;
+}
+
+.radio-genero .custom-radio::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+.radio-genero input[type="radio"]:checked~.custom-radio::after {
+    display: block;
+    animation: popIn 0.25s cubic-bezier(.4, 1.7, .6, 1);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Botones */
+.boton {
+    padding: 8px 15px;
+    /* Reducimos el padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    /* Reducimos el tamaño de la fuente */
+    cursor: pointer;
+}
+
+.boton.primario {
+    background: var(--bg);
+    color: #fff;
+}
+
+.boton.secundario {
+    background: #f0f4f8;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.boton.primario:hover {
+    background: var(--btm);
+}
+
+.boton.secundario:hover {
+    background: #e0e0e0;
+}
+
+/* Subgrupo de formulario en línea */
+.grupo-formulario.en-linea {
+    display: flex;
+    gap: 30px;
+    /* Espaciado entre los campos */
+}
+
+.subgrupo-formulario {
+    flex: 1;
+    /* Los campos ocupan el mismo ancho */
+}
+
+.subgrupo-formulario label {
+    display: block;
+    margin: 5px 0px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.subgrupo-formulario input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Quitar subrayado de los botones tipo enlace */
+a.boton {
+    text-decoration: none !important;
+}
+
+/* Quitar subrayado del enlace "Inicia Sesión" */
+.ya-miembro a {
+    text-decoration: none !important;
+}
+
+/* Alerta personalizada mejorada y centrada */
+#alerta-campos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #b9ebff5e;
+    display: flex;
+    align-items: flex-start;
+    /* Cambia de center a flex-start */
+    justify-content: center;
+    z-index: 9999;
+    pointer-events: none;
+    overflow: hidden;
+    padding-top: 12vh;
+    /* Ajusta este valor para subir o bajar la alerta */
+}
+
+#alerta-campos.mostrar {
+    pointer-events: auto;
+}
+
+.alerta-contenido {
+    min-width: 260px;
+    max-width: 90vw;
+    background: var(--btm0);
+    color: black;
+    border: 2px solid var(--hvr2);
+    border-radius: 10px;
+    padding: 18px 28px;
+    box-shadow: 0 4px 24px rgba(255, 152, 0, 0.15);
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+    animation: fadeInAlerta 0.35s cubic-bezier(.4, 1.7, .6, 1) forwards;
+}
+
+@keyframes fadeInAlerta {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#alerta-cerrar {
+    background: none;
+    border: none;
+    color: var(--hvr1);
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+#alerta-cerrar:hover {
+    color: var(--hvr2);
+}
+
+/* ...existing code... */
+
+.seccion-publicacion h2 {
+    text-align: center;
+    color: var(--hvr2);
+    margin-bottom: 25px;
+}

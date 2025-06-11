@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* h4 {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(0, 135, 224);
+} */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/fondo_login-register.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.logo p {
+    font-weight: 800;
+}
+
+header {
+    background-color: rgb(230, 230, 230);
+    padding: 15px 3px;
+    position: fixed;
+    width: 100vw;
+    z-index: 10000000;
+    top: 0;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+header nav {
+    margin-right: 30px;
+}
+
+header p {
+    font-weight: 700;
+}
+
+
+header a {
+    text-decoration: none;
+    color: black;
+    padding: 0px 15px;
+    font-weight: 700;
+
+}
+
+header a:hover {
+    color: var(--btm);
+    border-bottom: 2px solid var(--btm);
+    transition: 0.1s;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+main {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 90px;
+
+}
+
+.contenedor__todo {
+    width: 100%;
+    max-width: 815px;
+    padding: 0px 5px;
+    margin: auto;
+    position: relative;
+
+}
+
+.caja__trasera {
+    width: 100%;
+    margin-top: 33px;
+    padding: 10px 0px;
+    display: flex;
+    backdrop-filter: blur(10px);
+    background-color: #2c3e50;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+.caja__trasera div {
+    margin: 68px 67px;
+    color: white;
+    transition: all 500ms;
+}
+
+.caja__trasera div p,
+.caja__trasera div button {
+    margin-top: 30px;
+}
+
+.caja__trasera div h3 {
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.caja__trasera button {
+    padding: 10px 40px;
+    border: 2px solid floralwhite;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transform: all 300ms;
+    transition: all 0.3s;
+}
+
+.caja__trasera button:hover {
+    background: #1abc9c;
+    color: rgb(255, 255, 255);
+}
+
+
+.ingresar:hover {
+    background: #1abc9c;
+    color: rgb(255, 255, 255);
+    transition: all .5s;
+}
+
+.caja__trasera-register {
+    margin: 0px 1000px;
+}
+
+.contenedor__login-register {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.colore_l {
+    color: rgb(255, 255, 255);
+
+}
+
+.mayus {
+    color: rgb(255, 255, 255);
+
+}
+
+.contenedor__login-register form {
+    width: 100%;
+    padding: 70px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.contenedor__login-register form input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #5c5c5c3a;
+    font-size: 16px;
+    outline: none;
+
+}
+
+.contenedor__login-register form input:focus {
+    border: 1px solid rgb(0, 0, 0);
+    /* Cambia el color del borde */
+    outline: none;
+    /* Quita el contorno al hacer clic */
+
+}
+
+.contenedor__login-register form button {
+    padding: 10px 130px;
+    margin-top: 40px;
+
+    font-size: 14px;
+    background: #2c3e50;
+    color: white;
+    cursor: pointer;
+    outline: none;
+
+}
+
+
+.ingresar {
+    transition: 0.5s;
+    padding: 10px 170px;
+}
+
+.formulario__login {
+    opacity: 1;
+    display: block;
+
+}
+
+.formulario__register {
+
+    margin-top: 10px;
+    height: 400px;
+    display: none;
+}
+
+.h2_R {
+    margin-top: -40px;
+}
+
+
+
+.contenedor__login-register {
+    opacity: 0;
+    /* Oculta inicialmente */
+    animation: fadeIn 0.15s ease-in-out forwards;
+    /* Ajusta el retraso según lo que necesites */
+    position: relative;
+
+}
+
+.contenedor__todo {
+    opacity: 0;
+    /* Oculta inicialmente */
+    animation: fadeIn 0.8s ease-in-out forwards;
+    animation-delay: 0.3s;
+    /* Ajusta el retraso para que aparezca antes del formulario */
+}
+
+.carta-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 5%;
+
+}
+
+.aspirante-carta {
+    background-color: rgba(126, 126, 126, 0.354);
+    height: 45%;
+    width: 92.5%;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.empresa-carta {
+    background-color: rgba(126, 126, 126, 0.267);
+    height: 45%;
+    width: 92.5%;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.content-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-container .icon {
+    width: 50px;
+    height: 50px;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+.content-container h3 {
+    font-size: 1.5em;
+    transition: all 0.3s ease-in-out;
+}
+
+.aspirante-carta:hover,
+.empresa-carta:hover {
+    background-color: royalblue;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.aspirante-carta:hover .icon,
+.aspirante-carta:hover h3,
+.empresa-carta:hover .icon,
+.empresa-carta:hover h3 {
+    color: white;
+    /* O el color que prefieras */
+}
+
+footer {
+    padding: 100px 0px;
+    background-color: rgb(230, 230, 230);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer a {
+    margin: 5px 15px;
+    color: black;
+}
+
+footer nav {
+    padding: 20px 0px;
+}
+
+footer .icon {
+    width: 45px;
+    height: 30px;
+    margin: 20px 0px;
+    padding: 0px 10px;
+}
+
+footer .icon:hover {
+    cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 750px) {
+
+    input[type="email"] {
+        width: 285px;
+        padding: 13px 10px;
+        border-radius: 5px;
+        text-align: left;
+        border: solid 1px rgb(0, 0, 0, 0.5);
+    }
+
+    #hero h1 {
+        font-size: 3em;
+        font-weight: 500;
+
+    }
+
+    input[type="submit"] {
+        padding: 15px 70px;
+
+    }
+
+    /* 
+    #caracteristicas input[type="submit"] {
+        margin-top: 11px;
+    } */
+
+
+    footer {
+
+        padding: 0px 0px;
+    }
+
+    footer .container {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    footer .texto {
+        display: flex;
+        flex-direction: column;
+        text-align: initial;
+    }
+
+    footer .icon {
+        margin: 0px;
+    }
+
+    footer p {
+        color: rgb(160, 160, 160);
+    }
+
+    footer nav {
+        padding: 0px;
+    }
+
+    footer a {
+        margin: 0px;
+        padding-right: 30px;
+    }
+
+}

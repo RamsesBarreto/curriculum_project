@@ -1,0 +1,30 @@
+:root {
+
+    --btm0: #b9ebff;
+    --btm: #89ddff;
+    --bg: #4fbfeb;
+    --hvr1: #5fa6f8;
+    --hvr2: #1b85ff;
+}
+
+
+.agregar-mas {
+    background: var(--btm0);
+    color: var(--btm);
+    border: 2px dashed var(--bg);
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+}
+
+.agregar-mas:hover {
+    background: var(--bg);
+    color: #fff;
+    border-color: var(--hvr1);
+    box-shadow: 0 4px 16px rgba(255, 152, 0, 0.15);
+}

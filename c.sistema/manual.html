@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Aspirante | Talenthunter</title>
+    <link rel="stylesheet" href="../css/manual.css">
+    <style>
+        /* Animación de aparición para el manual */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    </style>
+</head>
+
+<body class="aparecer-arriba">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="imagen-logo"></div>
+                <p>TALENTHUNTER</p>
+            </div>
+            <nav>
+                <a href="/login-registro/a.inicio/home.html">Vacantes</a>
+                <a href="/login-registro/c.sistema/manual.html" class="active">Manual</a>
+                <a href="/login-registro/c.sistema/empresas.html">Empresas</a>
+                <a href="/login-registro/a.inicio/login_register.php">Perfil</a>
+                <a href="/login-registro/a.inicio/login_register.php">Cerrar Sesion</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="manual">
+        <div class="container">
+            <div class="carta-container fade-in" id="manualFade">
+                <div class="interes-wrapper">
+                    <h2>Manual de Usuario - Aspirante</h2>
+                </div>
+                <div class="manual-content">
+                    <h3>Bienvenido/a Aspirante</h3>
+                    <p>
+                        Este manual está diseñado para guiarte en cada paso como aspirante dentro de Talenthunter. Aquí
+                        aprenderás cómo registrarte, completar tu perfil, subir tu currículum, explorar vacantes y
+                        postularte a empleos.
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Registro e Inicio de Sesión:</strong>
+                            <ul>
+                                <li>Haz clic en "Iniciar Sesión" en el menú superior.</li>
+                                <li>Si no tienes cuenta, selecciona "Registrarse" y completa tus datos personales.</li>
+                                <li>Verifica tu correo electrónico si es necesario para activar tu cuenta.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Completa tu Perfil:</strong>
+                            <ul>
+                                <li>Accede a tu perfil desde el menú "Perfil".</li>
+                                <li>Agrega información personal, experiencia laboral, educación y habilidades.</li>
+                                <li>Sube una foto de perfil profesional para destacar tu candidatura.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Sube tu Currículum:</strong>
+                            <ul>
+                                <li>En tu perfil, busca la opción para adjuntar o subir tu currículum en PDF o Word.
+                                </li>
+                                <li>Asegúrate de que tu archivo esté actualizado y sea claro.</li>
+                                <li>Puedes actualizar tu currículum en cualquier momento desde tu perfil.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Explora Vacantes:</strong>
+                            <ul>
+                                <li>Haz clic en "Vacantes" en el menú principal para ver todas las ofertas disponibles.
+                                </li>
+                                <li>Utiliza los filtros por área, ubicación o tipo de empleo para encontrar las vacantes
+                                    que más te interesen.</li>
+                                <li>Haz clic en una vacante para ver los detalles completos y requisitos.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Postúlate a Vacantes:</strong>
+                            <ul>
+                                <li>Dentro de la vacante de tu interés, haz clic en "Postularme".</li>
+                                <li>Confirma tu postulación y asegúrate de que tu currículum esté adjunto.</li>
+                                <li>Puedes hacer seguimiento de tus postulaciones desde tu perfil.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Consulta Empresas:</strong>
+                            <ul>
+                                <li>En la sección "Empresas" puedes conocer más sobre las compañías registradas y sus
+                                    oportunidades laborales.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Soporte y Comunidad:</strong>
+                            <ul>
+                                <li>Si tienes dudas, utiliza la sección de contacto o revisa las preguntas frecuentes.
+                                </li>
+                                <li>Participa en la comunidad para compartir experiencias y consejos con otros
+                                    aspirantes.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>
+                        ¡Te deseamos mucho éxito en tu búsqueda laboral con Talenthunter!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="texto">
+                <nav>
+                    <a href="#">Nosotros</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                </nav>
+                <p>&copy; Ramses Barreto, Juan Yciarte 2025. Todos los derechos reservados</p>
+            </div>
+            <div class="img-container">
+                <div class="icons">
+                    <!-- Iconos SVG igual que en aspirante.html -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Animación de aparición al cargar la página
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.getElementById('manualFade').classList.add('visible');
+            }, 200);
+        });
+    </script>
+</body>
+
+</html>

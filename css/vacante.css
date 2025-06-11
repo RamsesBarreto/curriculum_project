@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+p {
+    font-size: 0.9em;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.container-inputs {
+    max-width: 1100px;
+    margin: auto;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+header {
+    background-color: rgb(230, 230, 230);
+    padding: 15px 3px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header .imagen-logo {
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/logito.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header nav {
+    margin-right: 30px;
+}
+
+
+header p {
+    font-weight: 800;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    padding: 0px 15px;
+    font-weight: 700;
+
+}
+
+header a:hover {
+    color: var(--btm);
+    border-bottom: 2px solid var(--btm);
+    transition: 0.1s;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vacantes-lista {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+
+}
+
+
+
+
+
+.card-container:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cardparrafo-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 5px 4%;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.vacante-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.vacante-acciones {
+    margin-top: 10px;
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-crear {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.btn-editar {
+    background: #ffd700;
+    color: #333;
+}
+
+.btn-eliminar {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.btn-crear {
+    background: #2196f3;
+    color: #fff;
+    max-width: 100px;
+}
+
+
+.card-container {
+
+    width: 40%;
+    height: 30%;
+    background: #f4f4f4;
+    border-radius: 10px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border: 2px solid #ccc;
+    border-top: none;
+    margin-left: 6.5%;
+    margin-bottom: 30px;
+
+
+
+}
+
+.vacante-card {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s;
+    color: white;
+    background-color: #2196f3;
+    border-top: 2px solid #ccc;
+    border-bottom: 0px;
+    border-left: none;
+    border-right: none;
+    padding: 24px 20px;
+
+}
+
+
+#filtrado-container {
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    margin-top: 80px;
+    display: flex;
+    background: #eaf1fb;
+    border-radius: 12px;
+
+
+    flex-wrap: wrap;
+    gap: 0px 0%;
+
+    box-shadow: 0 2px 8px rgba(9, 35, 69, 0.06);
+}
+
+.filtrado-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* Título y descripción del filtro */
+#filtrado-container .title-wrapper h2 {
+    color: #0070ba;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+#filtrado-container .title-wrapper p {
+    color: #093545;
+    font-size: 1em;
+    margin-bottom: 16px;
+}
+
+/* Formulario de búsqueda */
+
+
+.search-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid #0070ba;
+    border-radius: 6px;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.search-input:focus {
+    border-color: #093545;
+}
+
+.search-button {
+    background: #0070ba;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-button:hover {
+    background: #093545;
+}
+
+.vacantes-lista.vacante-row {
+    display: flex;
+
+}
+
+
+footer {
+    padding: 100px 0px;
+    background-color: rgb(240, 240, 240);
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer a {
+    margin: 5px 15px;
+    color: black;
+}
+
+footer nav {
+    padding: 20px 0px;
+}
+
+footer .icon {
+    width: 45px;
+    height: 30px;
+    margin: 20px 0px;
+    padding: 0px 10px;
+}
+
+footer .icon:hover {
+    cursor: pointer;
+}
+
+
+@media (min-width: 750px) {
+
+    footer {
+
+        padding: 0px 0px;
+    }
+
+    footer .container {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    footer .texto {
+        display: flex;
+        flex-direction: column;
+        text-align: initial;
+    }
+
+    footer .icon {
+        margin: 0px;
+    }
+
+    footer p {
+        color: rgb(160, 160, 160);
+    }
+
+    footer nav {
+        padding: 0px;
+    }
+
+    footer a {
+        margin: 0px;
+        padding-right: 30px;
+    }
+}

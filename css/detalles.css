@@ -1,0 +1,117 @@
+body {
+    background: #f8fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.title_experiencia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.experiencia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+.title-wrapper {
+    display: flex;
+    gap: 36%;
+}
+
+.mid-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 40%;
+}
+
+.titulos-datos {
+    height: 0;
+    border-top: 3px solid #0070ba;
+    width: 100%;
+    /* Cambia el porcentaje o usa px para ajustar */
+    margin: 3px 0 24px 0;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 35%
+}
+
+.detalle-vacante {
+
+    width: 90%;
+    margin: 60px auto 0 auto;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(9, 35, 69, 0.10);
+    padding: 36px 32px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+}
+
+.detalle-vacante h1 {
+    color: #093545;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.detalle-vacante p {
+    color: #222;
+    font-size: 1.08em;
+    margin: 0 0 6px 0;
+    line-height: 1.5;
+}
+
+.detalle-vacante p b {
+    color: #0070ba;
+    font-weight: 600;
+}
+
+.detalle-vacante a {
+    display: inline-block;
+    margin-top: 18px;
+    background: #0070ba;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.detalle-vacante a:hover {
+    background: #093545;
+}

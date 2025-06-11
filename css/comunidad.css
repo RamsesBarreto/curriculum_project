@@ -1,0 +1,151 @@
+input[type="submit"] {
+    background-color: rgb(13, 109, 250);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 13px;
+    margin: 0px 5px;
+}
+
+input[type="email"] {
+    width: 180px;
+    padding: 13px 10px;
+    border-radius: 5px;
+    text-align: left;
+    border: solid 1px rgb(0, 0, 0, 0.5);
+}
+
+.container {
+    width: 100%;
+
+}
+
+#personas {
+    background: linear-gradient(0deg, rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../img/Imagen4.jpg);
+    color: white;
+}
+
+#personas .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: center;
+    padding: 0px 0px;
+}
+
+#personas .img-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 2.5px white solid;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.5);
+    object-fit: cover;
+
+}
+
+
+
+@media (min-width: 750px) {
+
+    #personas p {
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+    }
+
+
+
+    input[type="email"] {
+        width: 285px;
+        padding: 13px 10px;
+        border-radius: 5px;
+        text-align: left;
+        border: solid 1px rgb(0, 0, 0, 0.5);
+    }
+
+
+    #personas h2 {
+        font-weight: 600;
+        font-size: 2em;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 0px;
+
+    }
+
+    h3 {
+        font-size: 0.8em;
+        margin: 0;
+    }
+
+    #personas .container {
+        padding-top: 95px;
+
+    }
+
+    #personas .carta-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #personas .carta {
+        gap: 0px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .parrafo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .person-wrapper {
+        width: 50%;
+        margin-top: 25px;
+    }
+
+    .titulo-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* Opcional, para centrar verticalmente si hay altura */
+
+    }
+
+    .container-personas {
+        display: flex;
+
+    }
+
+    .personas-container {
+        height: 430px;
+        width: 480px;
+        display: flex;
+        flex-direction: row;
+        background-image: url(../img/Imagen5.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+
+    }
+
+    .contenido-personas {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 70px;
+        /* Espacio entre tarjetas e imagen */
+        align-items: flex-start;
+        /* Opcional: alinea arriba */
+    }
+
+
+
+
+}
