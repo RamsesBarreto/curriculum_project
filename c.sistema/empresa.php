@@ -84,6 +84,19 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
     <title>HOME ASPIRANTE</title>
     <link rel="stylesheet" href="../css/estructura.css">
     <link rel="stylesheet" href="../css/tarjetas.css">
+     <style>
+        /* Animación de aparición para el manual */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(0px) scale(0.96);
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    </style>
    
 
 </head>
@@ -96,15 +109,15 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
                 <p>TALENTHUNTER</p>
             </div>
             <nav>
-                <a href="/login-registro/a.inicio/home.html">Vacantes</a>
+                 <a href="/login-registro/c.sistema/empresa.php">Inicio</a>
+                <a href="/login-registro/b.formularios/publicaciones.php">Ofertar</a>
+                <a href="/login-registro/c.sistema/buzon.php">Buzon de CV</a>
                 <a href="/login-registro/c.sistema/manualempresa.html">Manual</a>
-                <a href="/login-registro/a.inicio/comunidad.html">Empresas</a>
-                 <a href="/login-registro/a.inicio/login_register.php">Perfil</a>
                 <a href="/login-registro/php/cerrar_sesion.php">Cerrar Sesion</a>
             </nav>
         </div>
     </header>
-    <section id="caracteristicas" class="empresa">
+    <section id="caracteristicas" class="empresa fade-in">
         <div class="container">
        
             
@@ -307,6 +320,14 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
         </div>
     </footer>
 
+     <script>
+        // Animación de aparición al cargar la página
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.getElementById('caracteristicas').classList.add('visible');
+            }, 150);
+        });
+    </script>
 
 </body>
 

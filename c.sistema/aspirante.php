@@ -96,6 +96,7 @@ if($_SESSION['tipo_usuario'] != 'aspirante') {
                 <p>TALENTHUNTER</p>
             </div>
             <nav>
+                <a href="/login-registro/a.inicio/home.html">Inicio</a>
                 <a href="/login-registro/a.inicio/home.html">Vacantes</a>
                 <a href="/login-registro/c.sistema/manual.html">Manual</a>
                 <a href="/login-registro/a.inicio/comunidad.html">Empresas</a>
@@ -106,30 +107,10 @@ if($_SESSION['tipo_usuario'] != 'aspirante') {
     </header>
     <section id="caracteristicas" class="aspirante">
         <div class="container">
-            <!-- PARTE IZQUIERDA -->
-            <!-- TARJETA DE PERFIL DE USUARIO  -->
-
-             <!-- PERFIL -->
-
-
-
-            <!-- PARTE DERECHA -->
-
-            <!-- MENSAJE DE BIENVENIDA -->
-
-            <!-- <div class="cotenido-container">
-
-               
--->
-            
+      
 
      <div class="izquierda-wrapper">
-                
-  
-
 <div class="carta-container">
-                
-
                       <div class="interes-wrapper">
                     <h2>Datos Personales</h2>
                 </div> 
@@ -169,9 +150,7 @@ if($_SESSION['tipo_usuario'] != 'aspirante') {
                             <p><?php echo $_SESSION['direccion']?></p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
                 
 <div class="bienvenida-container">

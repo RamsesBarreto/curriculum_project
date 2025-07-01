@@ -138,9 +138,6 @@ mysqli_close($conexion);
 <?php } 
 ?>
 
-
-
-
   <footer>
         <div class="container">
             <div class="texto">

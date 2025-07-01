@@ -14,20 +14,20 @@
 .contenedor-registro {
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.712);
     width: 100%;
     /* Aumentamos el ancho al 95% de la página */
     max-width: 1100px;
     /* Permitimos que sea más ancho en pantallas grandes */
-    padding: 30px;
-    padding: 100px 30px;
+    padding: 75px 30px 100px;
     /* Ajustamos el padding para mayor espacio interno */
     display: flex;
     flex-direction: column;
     gap: 20px;
     /* Espaciado entre elementos */
     margin: 100px auto;
-    margin-bottom: 0px;
+    margin-top: 150px;
+    margin-bottom: 50px;
 
     /* Centramos el formulario con márgenes automáticos */
 }
@@ -38,13 +38,16 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url(../img/blue-orange-geometric-professional-background-free-vector.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     margin: 0;
     color: #333;
-    padding: 20px;
     /* ...existing code... */
 }
 
@@ -72,7 +75,7 @@ body {
 .encabezado-registro h1 {
     text-align: center;
     font-size: 1.8em;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     /* Reducimos el tamaño de la fuente */
     color: var(--hvr2);
 }
@@ -282,31 +285,37 @@ textarea {
 
 /* Botones */
 .boton {
-    padding: 8px 15px;
+    padding: 15px 30px;
     /* Reducimos el padding */
     border: none;
     border-radius: 5px;
-    font-size: 0.9em;
+    width: 100%;
+    font-size: 1em;
     /* Reducimos el tamaño de la fuente */
     cursor: pointer;
 }
 
+
 .boton.primario {
     background: var(--bg);
     color: #fff;
+    transition: .2s all;
 }
 
 .boton.secundario {
     background: #f0f4f8;
     color: #333;
     border: 1px solid #ddd;
+    transition: .2s all;
 }
 
 .boton.primario:hover {
-    background: var(--btm);
+    background: #1996c7;
+    transition: .2s all;
 }
 
 .boton.secundario:hover {
+    transition: .2s all;
     background: #e0e0e0;
 }
 
@@ -413,6 +422,6 @@ a.boton {
 
 .seccion-publicacion h2 {
     text-align: center;
-    color: var(--hvr2);
+    color: #dd9837;
     margin-bottom: 25px;
 }

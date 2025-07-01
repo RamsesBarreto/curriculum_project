@@ -12,9 +12,6 @@ unset($_SESSION['datos_personales']);
 include('conexion_be.php');
 $email = $_POST['email'];
 
-
-// $query1 = "INSERT INTO applicant(name, lastname, email, gender, address, birthday_date, password, phone_number, age) VALUES ('$name', '$last_name', '$email', '$gender', '$address', '$birthday', '$password', '$phone','$age')";
-
 $verificar_correo = mysqli_query($conexion, "SELECT * FROM applicant WHERE email = '$email'");
 
     if(mysqli_num_rows($verificar_correo) > 0) {
@@ -26,9 +23,6 @@ $verificar_correo = mysqli_query($conexion, "SELECT * FROM applicant WHERE email
     else{
         $ejecutar = true;
     }
-
-
-//  $ejecutar = mysqli_query($conexion, $query);
 
  if($ejecutar) {
 

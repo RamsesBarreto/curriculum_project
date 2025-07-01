@@ -82,13 +82,10 @@ $result = mysqli_query($conexion, $query);
              <p class="vacante-email"><b>Empresa:</b> <?php echo $row['company_name'];?></p>
              <p class="vacante-empresa"><b>Salario: </b> <?php echo $row['job_salary'];?></p>
              <p class="vacante-empresa"><b>Indutria: </b> <?php echo $row['company_industry'];?></p>
-             
                 </div>
         </a>
         </div>
 
-        
-        
 <?php } ?>
 <?php mysqli_close($conexion); ?>
 </div>

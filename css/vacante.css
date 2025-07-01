@@ -85,17 +85,17 @@ header .container {
     align-items: center;
 }
 
+header.publicacion {
+    z-index: 10000000;
+    position: absolute;
+    margin-bottom: 1000px;
+}
+
 .vacantes-lista {
     display: flex;
     flex-direction: column;
     height: 100%;
-
-
 }
-
-
-
-
 
 .card-container:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -272,6 +272,10 @@ footer .container {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+footer.foot-publicacion {
+    margin-top: 30px;
 }
 
 footer a {

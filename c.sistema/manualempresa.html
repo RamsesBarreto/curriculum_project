@@ -13,6 +13,7 @@
             transform: translateY(40px) scale(0.98);
             transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -28,11 +29,11 @@
                 <p>TALENTHUNTER</p>
             </div>
             <nav>
-                <a href="/login-registro/a.inicio/home.html">Vacantes</a>
-                <a href="/login-registro/c.sistema/manualempresa.html" class="active">Manual</a>
-                <a href="/login-registro/c.sistema/empresas.html">Empresas</a>
-                <a href="/login-registro/a.inicio/login_register.php">Perfil</a>
-                <a href="/login-registro/a.inicio/login_register.php">Cerrar Sesion</a>
+                <a href="/login-registro/c.sistema/empresa.php">Inicio</a>
+                <a href="/login-registro/b.formularios/publicaciones.php">Ofertar</a>
+                <a href="/login-registro/c.sistema/buzon.php">Buzon de CV</a>
+                <a href="/login-registro/c.sistema/manualempresa.html">Manual</a>
+                <a href="/login-registro/php/cerrar_sesion.php">Cerrar Sesion</a>
             </nav>
         </div>
     </header>
@@ -46,22 +47,27 @@
                 <div class="manual-content">
                     <h3>Bienvenido/a Empresa</h3>
                     <p>
-                        Este manual está diseñado para guiarte en cada paso como empresa dentro de Talenthunter. Aquí aprenderás cómo registrar tu empresa, completar tu perfil empresarial, publicar vacantes, gestionar postulaciones y encontrar el mejor talento.
+                        Este manual está diseñado para guiarte en cada paso como empresa dentro de Talenthunter. Aquí
+                        aprenderás cómo registrar tu empresa, completar tu perfil empresarial, publicar vacantes,
+                        gestionar postulaciones y encontrar el mejor talento.
                     </p>
                     <ol>
                         <li>
                             <strong>Registro e Inicio de Sesión:</strong>
                             <ul>
                                 <li>Haz clic en "Iniciar Sesión" en el menú superior.</li>
-                                <li>Si tu empresa no tiene cuenta, selecciona "Registrarse" y completa los datos de la empresa y del responsable.</li>
-                                <li>Verifica el correo electrónico de la empresa si es necesario para activar la cuenta.</li>
+                                <li>Si tu empresa no tiene cuenta, selecciona "Registrarse" y completa los datos de la
+                                    empresa y del responsable.</li>
+                                <li>Verifica el correo electrónico de la empresa si es necesario para activar la cuenta.
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <strong>Completa el Perfil de tu Empresa:</strong>
                             <ul>
                                 <li>Accede al perfil desde el menú "Perfil".</li>
-                                <li>Agrega información relevante de la empresa: nombre, sector, ubicación, descripción y logotipo.</li>
+                                <li>Agrega información relevante de la empresa: nombre, sector, ubicación, descripción y
+                                    logotipo.</li>
                                 <li>Incluye datos de contacto y enlaces a redes sociales o sitio web.</li>
                             </ul>
                         </li>
@@ -69,7 +75,8 @@
                             <strong>Publica Vacantes:</strong>
                             <ul>
                                 <li>En el panel de empresa, selecciona la opción para crear una nueva vacante.</li>
-                                <li>Completa los campos requeridos: título del puesto, descripción, requisitos, ubicación y tipo de contrato.</li>
+                                <li>Completa los campos requeridos: título del puesto, descripción, requisitos,
+                                    ubicación y tipo de contrato.</li>
                                 <li>Publica la vacante para que los aspirantes puedan verla y postularse.</li>
                             </ul>
                         </li>
@@ -78,7 +85,8 @@
                             <ul>
                                 <li>Revisa las postulaciones recibidas desde el panel de vacantes.</li>
                                 <li>Filtra candidatos por experiencia, habilidades o palabras clave.</li>
-                                <li>Descarga currículums y contacta a los aspirantes que más se ajusten a tus necesidades.</li>
+                                <li>Descarga currículums y contacta a los aspirantes que más se ajusten a tus
+                                    necesidades.</li>
                             </ul>
                         </li>
                         <li>
@@ -91,14 +99,16 @@
                         <li>
                             <strong>Consulta Aspirantes:</strong>
                             <ul>
-                                <li>Accede a la base de datos de aspirantes para buscar perfiles que se ajusten a tus vacantes.</li>
+                                <li>Accede a la base de datos de aspirantes para buscar perfiles que se ajusten a tus
+                                    vacantes.</li>
                                 <li>Utiliza filtros avanzados para encontrar el mejor talento.</li>
                             </ul>
                         </li>
                         <li>
                             <strong>Soporte y Comunidad:</strong>
                             <ul>
-                                <li>Si tienes dudas, utiliza la sección de contacto o revisa las preguntas frecuentes.</li>
+                                <li>Si tienes dudas, utiliza la sección de contacto o revisa las preguntas frecuentes.
+                                </li>
                                 <li>Comparte experiencias y consejos con otras empresas en la comunidad.</li>
                             </ul>
                         </li>
@@ -138,4 +148,5 @@
         });
     </script>
 </body>
+
 </html>

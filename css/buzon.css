@@ -1,37 +1,72 @@
+h2 {
+    margin-bottom: 10px;
+}
+
 .buzon-container {
-    max-width: 1100px;
+
     margin: 40px auto;
+    margin-top: 100px;
     padding: 30px 20px;
     background: #f8fafc;
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(9, 35, 69, 0.08);
 }
 
-.filtro-cv {
-    margin-bottom: 30px;
+.titulo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
+.filtro-container {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.filtro-cv {
+    margin-bottom: 20px;
+}
+
+.filtro-cv form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
 .filtro-cv input {
-    padding: 8px 12px;
+    padding: 10px 20px;
     border-radius: 6px;
     border: 1.5px solid #0070ba;
     font-size: 1em;
+    width: 70%;
+
 }
 
 .filtro-cv button {
-    padding: 8px 18px;
     border-radius: 6px;
     background: #0070ba;
     color: #fff;
     border: none;
     font-weight: 600;
+    width: 28%;
     cursor: pointer;
+}
+
+.cv-lista {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .cv-lista,
 .publicaciones-activas {
     margin-bottom: 40px;
 }
+
 
 .cv-card,
 .pub-card {
@@ -41,8 +76,27 @@
     padding: 18px 20px;
     margin-bottom: 18px;
     display: flex;
+    width: 48%;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.pub-card.publicaciones {
+    width: 75%;
+}
+
+.cv-archivo.curriculum {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.container-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .btn-ver-cv {
