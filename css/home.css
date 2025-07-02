@@ -390,3 +390,156 @@ body {
         padding: 20px 20px
     } */
 }
+
+/* ...existing code... */
+
+.hero-inputs .inputs input[type="button"] {
+    background: #120488;
+    color: #fafafa;
+    border: 2px solid #304dee;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin: 8px 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.hero-inputs .inputs input[type="button"]:hover {
+    background: #302dfd;
+    color: #fff;
+}
+
+.extra-section {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+    /* Quita el borde gris y agrega un borde blanco translúcido */
+    border: 1.5px solid rgba(255,255,255,0.5);
+    /* Fondo blanco translúcido con efecto difuminado */
+    background: rgba(255,255,255,0.45);
+    /* Sombra más notoria para dar efecto de "flotante" */
+    box-shadow: 0 8px 32px 0 rgba(13, 109, 250, 0.18), 0 2px 24px 0 rgba(255, 255, 255, 0.12);
+    /* Efecto de difuminado (frosted glass) */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+    padding: 32px 0 24px 0;
+}
+
+.extra-section .container {
+    padding: 0 18px;
+    /* Fondo blanco difuminado solo para el contenido interno */
+    background: rgba(255,255,255,0.35);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px 0 rgba(255, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.extra-section h2 {
+    color: #0d6dfa;
+    font-size: 2em;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-align: center; /* Centra el título */
+}
+
+.extra-section:not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: -24px;
+    height: 2px;
+    background: linear-gradient(to right, #e3e8f0 0%, #f5f7fa 100%);
+    border-radius: 2px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+
+
+.cards-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.presentation-card {
+    background: #f8f9fb;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(13,109,250,0.07);
+    overflow: hidden;
+    width: 260px;
+    transition: transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.25s;
+    cursor: pointer;
+    border: 1.5px solid #e3e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.presentation-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(13,109,250,0.18);
+    border-color: #0d6dfa;
+}
+
+.presentation-card:hover img {
+    filter: brightness(1.08) saturate(1.2);
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 18px 16px 16px 16px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.15em;
+    color: #0d6dfa;
+}
+
+
+.slide-in-right {
+    animation: slideInRight 0.5s forwards;
+}
+.slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+}
+.slide-in-left {
+    animation: slideInLeft 0.5s forwards;
+}
+.slide-out-right {
+    animation: slideOutRight 0.5s forwards;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%);}
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideOutLeft {
+    from { opacity: 1; transform: translateX(0);}
+    to   { opacity: 0; transform: translateX(-100%);}
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%);}
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0);}
+    to   { opacity: 0; transform: translateX(100%);}
+}

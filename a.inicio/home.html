@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Talenthunter</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/estructura.css">
+    <link rel="stylesheet" href="../css/comunidad.css">
+    <link rel="stylesheet" href="../JS/home.js">
 </head>
 
 <body>
@@ -18,7 +20,7 @@
                 <p>TALENTHUNTER</p>
             </div>
             <nav>
-                <a href="/login-registro/a.inicio/home.html">Quienes Somos</a>
+                <a href="/login-registro/a.inicio/home.html">¿Quienes Somos?</a>
                 <a href="/login-registro/a.inicio/comunidad.html">Comunidad</a>
                 <a href="/login-registro/a.inicio/login_register.php">Iniciar Sesion</a>
             </nav>
@@ -42,52 +44,100 @@
         </div>
 
         <div id="inputs" class="container-inputs">
-            <form class="hero-inputs" action="/categoria.html" method="get">
-                <div class="inputs">
-                    <input type="submit" value="Acerca de Nosotros">
-                    <input type="submit" value="Unete a la Comunidad">
-                    <input type="submit" value="Oportunidades Laborales">
+
+<form class="hero-inputs" action="/categoria.html" method="get">
+    <div class="inputs">
+        <input type="button" value="Acerca de Nosotros" onclick="window.location.href='/login-registro/a.inicio/comunidad.html#acerca-nosotros'">
+        <input type="button" value="Unete a la Comunidad" onclick="window.location.href='/login-registro/a.inicio/comunidad.html'">
+        <input type="button" value="Oportunidades Laborales" onclick="window.location.href='/login-registro/a.inicio/comunidad.html#oportunidades-laborales'">
+    </div>
+</form>
+
+        </div>
+    </section>
+
+    <!-- Carrusel Acerca de Nosotros / Oportunidades Laborales -->
+<section id="info-carrusel" class="extra-section">
+    <div class="carrusel-wrapper">
+        <div class="carrusel-content" style="display:flex;align-items:center;justify-content:center;">
+            <div style="flex:1;min-width:0;">
+                <!-- Slide 1: Acerca de Nosotros -->
+                <div class="carrusel-slide" style="display:block;">
+                    <div class="container" style="position:relative; display:flex; align-items:center;">
+                        <button class="carrusel-prev" aria-label="Anterior"
+                            style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:#0d6dfa;color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:1.5em;cursor:pointer;opacity:0.85;z-index:2;">
+                            &#8592;
+                        </button>
+                        <div style="flex:1;">
+                            <h2>Acerca de Nosotros</h2>
+                            <div class="cards-row">
+                                <div class="presentation-card">
+                                    <img src="../img/talento.jpg" alt="Equipo Talenthunter">
+                                    <div class="card-content">
+                                        <h3>Nuestra Misión</h3>
+                                        <p>Conectar talento con oportunidades, impulsando el crecimiento profesional y empresarial.</p>
+                                    </div>
+                                </div>
+                                <div class="presentation-card">
+                                    <img src="../img/valores.jpg" alt="Valores Talenthunter">
+                                    <div class="card-content">
+                                        <h3>Valores</h3>
+                                        <p>Transparencia, innovación y compromiso con la comunidad laboral.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carrusel-next" aria-label="Siguiente"
+                            style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:#0d6dfa;color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:1.5em;cursor:pointer;opacity:0.85;z-index:2;">
+                            &#8594;
+                        </button>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- 
-    <section id="somos-programa">
-        <div class="container">
-            <div class="img-container"></div>
-            <div class="texto">
-                <h2>Somos <span>ProgramaYa!</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempore minus quas vitae sint
-                    deleniti. Illo nemo voluptatibus odit excepturi eveniet atque deleniti, tempore voluptate, quos
-                    nesciunt
-                    debitis ipsum facere!</p>
+                <!-- Slide 2: Oportunidades Laborales -->
+                <div class="carrusel-slide" style="display:none;">
+                    <div class="container" style="position:relative; display:flex; align-items:center;">
+                        <button class="carrusel-prev" aria-label="Anterior"
+                            style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:#0d6dfa;color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:1.5em;cursor:pointer;opacity:0.85;z-index:2;">
+                            &#8592;
+                        </button>
+                        <div style="flex:1;">
+                            <h2>Oportunidades Laborales</h2>
+                            <div class="cards-row">
+                                <div class="presentation-card">
+                                    <div class="img-wrapper">
+                                        <img src="../img/Desarrollador.jpg" alt="Desarrollador Web Junior">
+                                        <div class="card-content">
+                                            <h3>Desarrollador Web</h3>
+                                            <p>Empresa ABC - Remoto</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="presentation-card">
+                                    <img src="../img/analista_datos.jpg" alt="Analista de Datos">
+                                    <div class="card-content">
+                                        <h3>Analista de Datos</h3>
+                                        <p>Empresa XYZ - Presencial</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                ¿Quieres publicar una vacante o postularte? <a href="/login-registro/a.inicio/login_register.php">Inicia sesión</a> para acceder a todas las oportunidades.
+                            </p>
+                        </div>
+                        <button class="carrusel-next" aria-label="Siguiente"
+                            style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:#0d6dfa;color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:1.5em;cursor:pointer;opacity:0.85;z-index:2;">
+                            &#8594;
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-
-    <section id="aplica-ya">
-        <div class="container">
-            <h2>Listo para programar?</h2>
-            <input type="submit" value="APLICA YA!">
+        <div style="text-align:center;margin-top:12px;">
+            <span class="carrusel-dot" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#0d6dfa;opacity:0.8;margin:0 4px;cursor:pointer;"></span>
+            <span class="carrusel-dot" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#e3e8f0;opacity:0.8;margin:0 4px;cursor:pointer;"></span>
         </div>
-    </section>
-
-
-    <section id="caracteristicas">
-        <div class="container">
-            <div class="texto">
-                <ul>
-                    <li>✅ 100% Online</li>
-                    <li>✅ Flexibilidad de Horarios</li>
-                    <li>✅ Soporte 1:1 </li>
-                    <li>✅ Asistencia Financiera</li>
-                </ul>
-            </div>
-            <div class="img-container"></div>
-        </div>
-    </section> -->
+    </div>
+</section>
 
     <footer>
         <div class="container">
@@ -125,7 +175,9 @@
                 </div>
             </div>
         </div>
+        <script src="../JS/home.js"></script>
     </footer>
+
 
 </body>
 
