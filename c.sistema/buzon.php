@@ -187,7 +187,7 @@ if (isset($_GET['eliminar_publicacion'])) {
 
         <!-- Publicaciones activas -->
         <div class="publicaciones-activas">
-            <h2>Publicaciones activas de la empresa</h2>
+            <h2>Publicaciones activas</h2>
             <?php if (mysqli_num_rows($result_pub) > 0): ?>
                 <?php while ($pub = mysqli_fetch_assoc($result_pub)): ?>
                     <div class="container-card">

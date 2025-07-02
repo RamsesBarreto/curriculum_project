@@ -48,10 +48,10 @@ $result = mysqli_query($conexion, $query . $filter);
             </div>
             <nav>
                 <a href="/login-registro/c.sistema/aspirante.php">Inicio</a>
-                <a href="/login-registro/a.inicio/home.html">Vacantes</a>
-                <a href="/login-registro/a.inicio/comunidad.html">Manual</a>
-                <a href="/login-registro/a.inicio/comunidad.html">Empresas</a>
-                 <a href="/login-registro/a.inicio/login_register.php">Perfil</a>
+                <a href="/login-registro/c.sistema/vacantes.php">Vacantes</a>
+                <a href="/login-registro/c.sistema/manual.html">Manual</a>
+                <a href="/login-registro/c.sistema/lista-empresas.php">Empresas</a>
+                 <a href="/login-registro/c.sistema/perfil.php">Perfil</a>
                 <a href="/login-registro/php/cerrar_sesion.php">Cerrar Sesion</a>
             </nav>
         </div>
@@ -59,8 +59,6 @@ $result = mysqli_query($conexion, $query . $filter);
 
 
 <div class="vacantes-lista">
-
-
 <div id="filtrado-container">
     <div class="filtrado-wrapper">
     <div class="title-wrapper">
