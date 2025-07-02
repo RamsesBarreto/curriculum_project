@@ -1,6 +1,3 @@
-
-
-
 <?php
 session_start();
 include('../php/conexion_be.php');
@@ -41,6 +38,8 @@ $query_pub = "SELECT * FROM job_publication WHERE fk_company_id = $id_empresa";
 $result_pub = mysqli_query($conexion, $query_pub);
 ?>
 
+<!-- /////////////////////////////////////////////// QUERY ELIMINAR CURRICULUM /////////////////////////////////////// -->
+
 <?php
 if (isset($_GET['eliminar_cv'])) {
     $cv_id = intval($_GET['eliminar_cv']);
@@ -57,6 +56,8 @@ if (isset($_GET['eliminar_cv'])) {
 }
 ?>
 
+<!-- /////////////////////////////////////////////// QUERY ELIMINAR PUBLICACION /////////////////////////////////////// -->
+
 <?php
 if (isset($_GET['eliminar_publicacion'])) {
     $pub_id = intval($_GET['eliminar_publicacion']);
@@ -65,6 +66,7 @@ if (isset($_GET['eliminar_publicacion'])) {
     exit();
 }
 ?>
+<!-- /////////////////////////////////////////////// HTML /////////////////////////////////////// -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -123,6 +125,7 @@ if (isset($_GET['eliminar_publicacion'])) {
                         <div class="cv-archivo curriculum">
                             <a href="../<?php echo $cv['pdf_url']; ?>" target="_blank" class="btn-ver-cv">Ver CV</a>
                              <a class="btn-ver-cv" href="buzon.php?eliminar_cv=<?php echo $cv['application_id'];?>" onclick="return confirm('¿Seguro que deseas eliminar este CV?');">Eliminar</a>
+                             <a class="btn-ver-cv" href="buzon.php?contactar_cv=<?php echo $cv['application_id']; ?>">Contactar</href=>
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -155,6 +158,8 @@ if (isset($_GET['eliminar_publicacion'])) {
         </div>
     </div>
 
+<!-- /////////////////////////////////////////////// LLAMADO A DIALOG MODIFICACION /////////////////////////////////////// -->
+
 <?php
 if (isset($_GET['modificar_publicacion'])) {
     $pub_id = intval($_GET['modificar_publicacion']);
@@ -165,6 +170,8 @@ if (isset($_GET['modificar_publicacion'])) {
 </script>';
 }
 ?>
+
+<!-- /////////////////////////////////////////////// DIALOGO DE MODIFICACION /////////////////////////////////////// -->
 
     <dialog id="login_dialog">
         <h2>Publicacion de Empleo</h2>
@@ -197,6 +204,8 @@ if (isset($_GET['modificar_publicacion'])) {
             <button onclick="dialog.close()">Cancelar</button>
     </dialog>
 
+<!-- /////////////////////////////////////////////// QUERY MODIFICAR PUBLICACION /////////////////////////////////////// -->
+
 <?php
 if (isset($_POST['modificacion'])) {
     $titulo = mysqli_real_escape_string($conexion, $_POST['titulo']);
@@ -219,6 +228,9 @@ if (isset($_POST['modificacion'])) {
 }
 ?>
 
+<!-- /////////////////////////////////////////////// QUERY MOSTRAR PUBLICACION /////////////////////////////////////// -->
+
+
 <?php
 if (isset($_GET['leer_publicacion'])) {
     $pub_id = intval($_GET['leer_publicacion']);
@@ -231,6 +243,8 @@ if (isset($_GET['leer_publicacion'])) {
 </script>';
 }
 ?>
+
+<!-- /////////////////////////////////////////////// MOSTRAR PUBLICACION /////////////////////////////////////// -->
 
 
 <dialog id="data_dialog">
@@ -246,6 +260,53 @@ if (isset($_GET['leer_publicacion'])) {
         <p><b>Experiencia requerida:</b><?php echo $pub_data['required_experience'] ?></p>
         <button onclick="data.close()">Cancelar</button>
 </dialog>
+
+<!-- /////////////////////////////////////////////// QUERY MOSTRAR PUBLICACION /////////////////////////////////////// -->
+
+<?php
+if (isset($_GET['contactar_cv'])) {
+    $application_id = intval($_GET['contactar_cv']);
+    // Obtén los datos del aspirante y la publicación
+    $query = "
+        SELECT a.email AS applicant_email, a.name AS applicant_name, a.lastname AS applicant_lastname, 
+               jp.title AS job_title
+        FROM application AS ap
+        INNER JOIN applicant AS a ON ap.fk_applicant_id = a.id
+        INNER JOIN job_publication AS jp ON ap.fk_job_publication_id = jp.id
+        WHERE ap.id = $application_id
+        LIMIT 1
+    ";
+    $result = mysqli_query($conexion, $query);
+    $contact_data = mysqli_fetch_assoc($result);
+
+    echo '<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        showDataDialog();
+    });// Se ejecuta automáticamente si la condición PHP se cumple
+</script>';
+
+}
+?>
+
+<!-- /////////////////////////////////////////////// DIALOGO DE CONTACTO /////////////////////////////////////// -->
+
+<dialog id="contacto_dialog">
+         <div class="contactar-form">
+        <h2>Contactar a <?php echo $contact_data['applicant_name'] . ' ' . $contact_data['applicant_lastname']; ?></h2>
+        <form method="POST" action="">
+            <input type="hidden" name="to_email" value="<?php echo $contact_data['applicant_email']; ?>">
+            <label for="subject">Asunto:</label>
+            <input type="text" name="subject" id="subject" required>
+            <label for="message">Mensaje:</label>
+            <textarea name="message" id="message" rows="6" required></textarea>
+            <input type="submit" name="enviar_correo" value="Enviar correo">
+        </form>
+        </div>
+        <button onclick="data.close()">Cancelar</button>
+</dialog>
+
+
+<!-- /////////////////////////////////////////////// FOOTER /////////////////////////////////////// -->
 
     <footer>
         <div class="container">
@@ -285,7 +346,8 @@ if (isset($_GET['leer_publicacion'])) {
         </div>
     </footer>
 
-    
+<!-- /////////////////////////////////////////////// FUNCIONES MOSTRADO DE DIALOG /////////////////////////////////////// -->
+
 <script>
         const dialog = document.getElementById("login_dialog")
         function showLoginDialog() {
