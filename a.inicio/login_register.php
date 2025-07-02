@@ -12,7 +12,7 @@
 <body>
     <section id="hero">
 
-          <header>
+        <header>
         <div class="container">
             <div class="logo">
                 <img src="../img/logito.png" alt="">

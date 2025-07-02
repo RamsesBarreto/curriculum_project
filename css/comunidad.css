@@ -46,7 +46,7 @@ input[type="email"] {
 
 
 
-@media (min-width: 750px) {
+@media (min-width: 750px) {}
 
     #personas p {
         font-size: 0.8em;
@@ -145,7 +145,14 @@ input[type="email"] {
         /* Opcional: alinea arriba */
     }
 
+footer{
+color: white;
+    
+}
 
-
-
+footer .icon, footer svg {
+    color: #fff !important;
+    fill: #fff !important;
+    /* Si los SVG usan stroke */
+    stroke: #fff !important;
 }

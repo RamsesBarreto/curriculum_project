@@ -1,66 +1,8 @@
-<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-
-<!-- 
-    if(!isset($_SESSION['rol'])) {
-        echo "ㅤ";
-        echo "<script>
-        Swal.fire({
-  title: 'Acceso Denegado!',
-  text: 'No puedes ingresar sin haber iniciado sesion ',
-  icon: 'error',
-  confirmButtonText: 'Volver'
-}).then((result) => {
-  if (result.isConfirmed) {
-    window.location.href = '../Login-Registro/login_register.php';
-  }
-});
- </script>";
-        die();
-    }
-
-    if($_SESSION['rol'] != 1) {
-        header("location: /respaldo/empresa.php");
-        die();
-    }
-
-    <a>href="/respaldo/php/cerrar_sesion.php">Cerrar Sesión</a>;  -->
-
-<!-- 
-
- // Inicilizar sesion para confirmar que el usuario ya tenga una sesion activa
-    // session_start();
-
-    if(!isset($_SESSION['rol'])) {
-        echo "<script>
-        Swal.fire({
-  title: 'Error!',
-  text: 'No puedes ingresar sin haber iniciado sesion ',
-  icon: 'error',
-  confirmButtonText: 'Volver'
-}).then((result) => {
-  if (result.isConfirmed) {
-    window.location.href = '../login_register.php';
-  }
-});
- </script>";
-        die();
-    }
-
-    if($_SESSION['rol'] != 1) {
-        header("location: /respaldo/empresa.php");
-        die();
-    }
-
-    echo "Bievenido " . $_SESSION['usuario'] . "<br>";
-    echo "El rol del usuario es: " . $_SESSION['rol'] . "<br>";
-
-    // <a>href="/respaldo/php/cerrar_sesion.php">Cerrar Sesión</a>;  -->
-
 <?php
     
 session_start();
 
- if(!isset($_SESSION['tipo_usuario'])) {
+if(!isset($_SESSION['tipo_usuario'])) {
     echo "<script>
     alert('Debes iniciar sesion primero');
     window.location = '/login-registro/a.inicio/login_register.php';
@@ -84,7 +26,7 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
     <title>HOME ASPIRANTE</title>
     <link rel="stylesheet" href="../css/estructura.css">
     <link rel="stylesheet" href="../css/tarjetas.css">
-     <style>
+<style>
         /* Animación de aparición para el manual */
         .fade-in {
             opacity: 0;
@@ -102,14 +44,14 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
 </head>
 
 <body class="aparecer-arriba">
-   <header>
+<header>
         <div class="container">
             <div class="logo">
-               <div class="imagen-logo"></div>
+            <div class="imagen-logo"></div>
                 <p>TALENTHUNTER</p>
             </div>
             <nav>
-                 <a href="/login-registro/c.sistema/empresa.php">Inicio</a>
+                <a href="/login-registro/c.sistema/empresa.php">Inicio</a>
                 <a href="/login-registro/b.formularios/publicaciones.php">Ofertar</a>
                 <a href="/login-registro/c.sistema/buzon.php">Buzon de CV</a>
                 <a href="/login-registro/c.sistema/manualempresa.html">Manual</a>
@@ -119,17 +61,17 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
     </header>
     <section id="caracteristicas" class="empresa fade-in">
         <div class="container">
-       
+
             
 
-     <div class="izquierda-wrapper">
+<div class="izquierda-wrapper">
                 
-  
+
 
 <div class="carta-container">
                 
 
-                      <div class="interes-wrapper">
+            <div class="interes-wrapper">
                     <h2>Datos Corporativos</h2>
                 </div> 
                     <div class="cartas">
