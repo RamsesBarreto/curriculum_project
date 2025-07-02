@@ -7,8 +7,7 @@
     <title>Talenthunter</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/estructura.css">
-    <link rel="stylesheet" href="../css/comunidad.css">
-    <link rel="stylesheet" href="../JS/home.js">
+    
 </head>
 
 <body>
