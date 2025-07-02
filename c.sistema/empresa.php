@@ -250,11 +250,10 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
                             </div>
                             <p>Perzonaliza tu perfil para atraer aspirantes! </p>
                         </div>
-                      
                         </a>
                          <!-- ////////////////////////////////////////////////////////////////// -->
 <a href="/login-registro/c.sistema/manualempresa.html">
-      <div class="cartas">
+    <div class="cartas">
                             <div class="titulo-cartas-wrapper">
                                 <h3>Manual</h3>
                                 <svg class="img-container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -267,8 +266,7 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
                             </div>
                             <p>Expande tus conocimientos sobre el sistema! </p>
                         </div>
-                       
-                         
+
 </a>                    <!-- ////////////////////////////////////////////////////////////////// -->
                     </div>
                     
@@ -291,7 +289,7 @@ if($_SESSION['tipo_usuario'] != 'empresa') {
                     <a href="#">Condiciones</a>
                     <a href="#">Politica de Privacidad</a>
                 </nav>
-                <p>&copy; Ramses Barreto 2025. Todos los derechos reservados</p>
+                <p>&copy; Ramses Barreto, Juan Yciarte 2025. Todos los derechos reservados</p>
             </div>
             <div class="img-container">
                 <div class="icons">

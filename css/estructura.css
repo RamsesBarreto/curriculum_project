@@ -138,6 +138,39 @@ header .container {
 #hero .container-inputs {
     padding: 25px 0px;
     padding-left: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+#hero .inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+#hero .inputs input[type="button"] {
+    background: #1f4180;
+    color: #fff;
+    border: 2px solid #a3c6fa;
+    border-radius: 8px;
+    padding: 12px 28px;
+    margin: 8px 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
+}
+
+#hero .inputs input[type="button"]:hover {
+    background: #2563eb;
+    border: 2px solid #2563eb;
+    color: #eaf1fb;
 }
 
 #hero .container .text-container {
@@ -217,8 +250,20 @@ footer {
     background-color: rgb(230, 230, 230);
     bottom: 0;
     width: 100%;
+    background: #2a4d7a;
 }
-
+footer nav a {
+    color: #fff;
+    margin-right: 18px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: text-decoration 0.2s;
+}
+footer p{
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
 footer .container {
     display: flex;
     flex-direction: column;
@@ -227,10 +272,7 @@ footer .container {
     text-align: center;
 }
 
-footer a {
-    margin: 5px 15px;
-    color: black;
-}
+
 
 footer nav {
     padding: 20px 0px;
@@ -297,11 +339,7 @@ footer .icon:hover {
     footer .icon {
         margin: 0px;
     }
-
-    footer p {
-        color: rgb(160, 160, 160);
-    }
-
+    
     footer nav {
         padding: 0px;
     }
@@ -311,4 +349,10 @@ footer .icon:hover {
         padding-right: 30px;
     }
 
+}
+
+footer nav a:hover {
+    border-bottom: 2px solid #fff; /* O el color que prefieras */
+    padding-bottom: 2px;
+    transition: border-bottom 0.2s;
 }

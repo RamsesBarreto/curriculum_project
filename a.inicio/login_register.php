@@ -107,7 +107,7 @@
     </section>
 
 
-     <footer>
+    <footer>
         <div class="container">
             <div class="texto">
                 <nav>
@@ -116,7 +116,7 @@
                     <a href="#">Condiciones</a>
                     <a href="#">Politica de Privacidad</a>
                 </nav>
-                <p>&copy; Ramses Barreto 2025. Todos los derechos reservados</p>
+                <p>&copy; Ramses Barreto, Juan Yciarte 2025. Todos los derechos reservados</p>
             </div>
             <div class="img-container">
                 <div class="icons">
