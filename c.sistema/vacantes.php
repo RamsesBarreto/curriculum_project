@@ -10,18 +10,33 @@
 </head>
 <body class="aparecer-arriba">
 
-
-
-
 <?php
 session_start();
 include('../php/conexion_be.php');
+
+
 $query = "
 SELECT jp.*, c.social_denomination AS company_name, c.email AS company_email, c.industry as company_industry
 FROM job_publication AS jp
 INNER JOIN company AS c ON jp.fk_company_id = c.id
 ";
-$result = mysqli_query($conexion, $query);
+
+$filter = "";
+if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
+    $buscar = mysqli_real_escape_string($conexion, $_GET['search']);
+    $filter = " AND (
+        c.social_denomination LIKE '%$buscar%' OR
+        c.industry LIKE '%$buscar%' OR
+        c.email LIKE '%$buscar%' OR
+        jp.title LIKE '%$buscar%' OR
+        jp.subtitle LIKE '%$buscar%' OR
+        jp.job_salary LIKE '%buscar%' OR
+        jp.job_occupation LIKE '%$buscar%'
+    )";
+}
+
+
+$result = mysqli_query($conexion, $query . $filter);
 ?>
 
 
@@ -43,8 +58,6 @@ $result = mysqli_query($conexion, $query);
     </header>
 
 
-
-
 <div class="vacantes-lista">
 
 
@@ -62,7 +75,7 @@ $result = mysqli_query($conexion, $query);
     <div class="content-wrapper">
         <form action="" method="GET">
             <input type="text" name="search" placeholder="Buscar vacante..." class="search-input">
-            <button type="submit" class="search-button">Buscar</button>
+            <button type="submit" name="buscar" class="search-button">Buscar</button>
         </form>
     </div>
     </div>

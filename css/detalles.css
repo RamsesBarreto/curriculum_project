@@ -16,6 +16,15 @@ h2 {
     padding: 0;
 }
 
+
+button {
+    margin-top: 0px;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+}
+
 .title_experiencia {
     display: flex;
     justify-content: center;
@@ -100,18 +109,66 @@ h2 {
     font-weight: 600;
 }
 
-.detalle-vacante a {
-    display: inline-block;
+.detalle-vacante a,
+button {
     margin-top: 18px;
+    display: inline-block;
     background: #0070ba;
     color: #fff;
+    cursor: pointer;
     text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 7px;
+    padding: 10px 27px;
+    border-radius: 6px;
     font-weight: 600;
-    transition: background 0.2s;
+    font-size: 1rem;
+    transition: all 0.2s;
 }
 
-.detalle-vacante a:hover {
+button {
+    padding: 10px 43%;
+}
+
+.detalle-vacante a:hover,
+button:hover,
+input:hover {
     background: #093545;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-label {
+    margin-top: 18px;
+    display: inline-block;
+    background: #0070ba;
+    color: #fff;
+    padding: 9px 20%;
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.custom-file-label:hover {
+    background: #005fa3;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+    justify-content: center;
+    width: 100%;
+}
+
+.boton-container {
+    width: 100%;
+}
+
+.pdf-container {
+    width: 100%;
 }

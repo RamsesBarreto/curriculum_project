@@ -50,7 +50,6 @@ $row = mysqli_fetch_assoc($result);
 if ($row) { ?>
     <div class="detalle-vacante">
         
-        
         <div class="title-wrapper">
         <h1><?php echo $row['title']; ?></h1>
         <p><b><?php echo $row['subtitle'];?></b></p>
@@ -88,10 +87,16 @@ if ($row) { ?>
         <p class="experiencia"><?php echo $row['required_experience'];?></p>
     
     <form action="" method="POST" enctype="multipart/form-data" class="formulario-pdf">
-    <label for="pdf_file"><b>Subir CV (PDF):</b></label>
+    <div class="pdf-container">   
+    <label for="pdf_file" class="custom-file-label" id="label-pdf">
+    <span id="file-name">Subir CV (PDF)</span>
     <input type="file" name="pdf_file" id="pdf_file" accept="application/pdf" required>
+    </label>
+    </div>
+    <div class="boton-container">
     <button type="submit" name="subir_pdf">Enviar</button>
-    </form>
+    </div>
+</form>
 
     <?php
 
@@ -175,6 +180,13 @@ mysqli_close($conexion);
             </div>
         </div>
     </footer>
+
+    <script>
+    document.getElementById('pdf_file').addEventListener('change', function(e) {
+    const fileName = e.target.files[0] ? e.target.files[0].name : 'Subir CV (PDF)';
+    document.getElementById('file-name').textContent = fileName;
+});
+    </script>
 
 </body>
 </html>

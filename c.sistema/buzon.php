@@ -33,6 +33,9 @@ if (isset($_GET['buscar']) && !empty(trim($_GET['buscar']))) {
         jp.job_occupation LIKE '%$buscar%'
     )";
 }
+
+
+
 $result_cv = mysqli_query($conexion, $query_cv . $filter);
 
 // 2. Obtener publicaciones activas de la empresa
@@ -114,7 +117,6 @@ if (isset($_GET['eliminar_publicacion'])) {
     </header>
 
     <div class="buzon-container">
-        
         <div class="filtro-container">
             <div class="titulo-container">
         <h1>Buzón de Curriculums</h1>
@@ -146,7 +148,37 @@ if (isset($_GET['eliminar_publicacion'])) {
                              <a class="btn-ver-cv" href="buzon.php?eliminar_cv=<?php echo $cv['application_id'];?>" onclick="return confirm('¿Seguro que deseas eliminar este CV?');">Eliminar</a>
                              <a class="btn-ver-cv" href="buzon.php?contactar_cv=<?php echo $cv['application_id']; ?>">Contactar</a>
                         </div>
-                    </div>
+
+                        <div class="card" style="width: 18rem;">
+    <div class="rating">
+      <svg class="bi bi-star-fill star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z">
+        </path>
+      </svg>
+      <svg class="bi bi-star-fill star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z">
+        </path>
+      </svg>
+      <svg class="bi bi-star-fill star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z">
+        </path>
+      </svg>
+      <svg class="bi bi-star-fill star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z">
+        </path>
+      </svg>
+      <svg class="bi bi-star-fill star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z">
+        </path>
+      </svg>
+    </div>
+  </div>
+                </div>
                 <?php endwhile; ?>
             <?php else: ?>
                 <p>No hay curriculums para mostrar.</p>
@@ -175,27 +207,11 @@ if (isset($_GET['eliminar_publicacion'])) {
                 <p>No hay publicaciones activas.</p>
             <?php endif; ?>
         </div>
-    </div>
 
-<!-- /////////////////////////////////////////////// LLAMADO A DIALOG MODIFICACION /////////////////////////////////////// -->
-
-<?php
-if (isset($_GET['modificar_publicacion'])) {
-    $pub_id = intval($_GET['modificar_publicacion']);
-    echo '<script>
-    window.addEventListener("DOMContentLoaded", function() {
-        showLoginDialog();
-    });// Se ejecuta automáticamente si la condición PHP se cumple
-</script>';
-}
-?>
-
-<!-- /////////////////////////////////////////////// DIALOGO DE MODIFICACION /////////////////////////////////////// -->
-
-    <dialog id="login_dialog">
+ <dialog id="login_dialog">
         <h2>Publicacion de Empleo</h2>
         <form action="" method="POST">
-                             <label for="titulo">Titulo</label>
+                            <label for="titulo">Titulo</label>
                             <input type="text" id="titulo" name="titulo" 
                                 required>
                             <label for="salario">Subtitulo</label>
@@ -219,9 +235,28 @@ if (isset($_GET['modificar_publicacion'])) {
                             <textarea id="experiencia" name="experiencia" placeholder="Describe la experiencia requerida"
                             required></textarea>
                 <input type="submit" name="modificacion" value="Enviar" >
+                <button onclick="dialog.close()">Cancelar</button>
             </form>
-            <button onclick="dialog.close()">Cancelar</button>
     </dialog>
+
+    </div>
+
+<!-- /////////////////////////////////////////////// LLAMADO A DIALOG MODIFICACION /////////////////////////////////////// -->
+
+<?php
+if (isset($_GET['modificar_publicacion'])) {
+    $pub_id = intval($_GET['modificar_publicacion']);
+    echo '<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        showLoginDialog();
+    });// Se ejecuta automáticamente si la condición PHP se cumple
+</script>';
+}
+?>
+
+<!-- /////////////////////////////////////////////// DIALOGO DE MODIFICACION /////////////////////////////////////// -->
+
+   
 
 <!-- /////////////////////////////////////////////// QUERY MODIFICAR PUBLICACION /////////////////////////////////////// -->
 
@@ -274,15 +309,15 @@ if (isset($_GET['leer_publicacion'])) {
 
 <dialog id="data_dialog">
         <h2>Publicacion de Empleo</h2>
-        <p><b>Titulo:</b><?php echo $pub_data['title'] ?></p>
-        <p><b>Subtitulo:</b><?php echo $pub_data['subtitle'] ?></p>
-        <p><b>Ocupación:</b><?php echo $pub_data['job_occupation'] ?></p>
-        <p><b>Inicio del turno:</b><?php echo $pub_data['start_shift_hours'] ?></p>
-        <p><b>Fin del turno:</b><?php echo $pub_data['end_shift_hours'] ?></p>
-        <p><b>Salario:</b><?php echo $pub_data['job_salary'] ?></p>
-        <p><b>Inicio del Reclutamiento:</b><?php echo $pub_data['start_reclutement_period'] ?></p>
-        <p><b>Fin del reclutamieto:</b><?php echo $pub_data['end_reclutement_period'] ?></p>
-        <p><b>Experiencia requerida:</b><?php echo $pub_data['required_experience'] ?></p>
+        <p><b>Titulo:</b> <?php echo $pub_data['title'] ?></p>
+        <p><b>Subtitulo: </b><?php echo $pub_data['subtitle'] ?></p>
+        <p><b>Ocupación: </b><?php echo $pub_data['job_occupation'] ?></p>
+        <p><b>Inicio del turno: </b><?php echo $pub_data['start_shift_hours'] ?></p>
+        <p><b>Fin del turno: </b><?php echo $pub_data['end_shift_hours'] ?></p>
+        <p><b>Salario:</b> <?php echo $pub_data['job_salary'] ?></p>
+        <p><b>Inicio del Reclutamiento: </b><?php echo $pub_data['start_reclutement_period'] ?></p>
+        <p><b>Fin del reclutamieto: </b><?php echo $pub_data['end_reclutement_period'] ?></p>
+        <p><b>Experiencia requerida: </b><?php echo $pub_data['required_experience'] ?></p>
         <button onclick="data.close()">Cancelar</button>
 </dialog>
 
@@ -401,6 +436,7 @@ if (isset($_GET['contactar_cv'])) {
 
     </script>
 
+        <script src="../JS/star.js"></script>
 
 </body>
 </html>
