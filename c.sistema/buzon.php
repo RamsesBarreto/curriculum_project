@@ -2,6 +2,8 @@
 session_start();
 include('../php/conexion_be.php');
 
+
+
 // Suponiendo que el id de la empresa está en la sesión
 $id_empresa = $_SESSION['id_empresa'];
 
@@ -36,6 +38,23 @@ $result_cv = mysqli_query($conexion, $query_cv . $filter);
 // 2. Obtener publicaciones activas de la empresa
 $query_pub = "SELECT * FROM job_publication WHERE fk_company_id = $id_empresa";
 $result_pub = mysqli_query($conexion, $query_pub);
+
+
+if (isset($_POST['enviar_correo'])) {
+    $to = $_POST['to_email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    // Incluye tu archivo mail.php aquí
+    include('../php/mail.php'); // Ajusta la ruta si es necesario
+
+    // Suponiendo que tu mail.php tiene una función enviarCorreo($to, $subject, $message)
+    if (enviarCorreo($to, $subject, $message)) {
+        echo "<script>alert('Correo enviado correctamente'); window.location.href='buzon.php';</script>";
+    } else {
+        echo "<script>alert('Error al enviar el correo');</script>";
+    }
+}
 ?>
 
 <!-- /////////////////////////////////////////////// QUERY ELIMINAR CURRICULUM /////////////////////////////////////// -->
@@ -125,7 +144,7 @@ if (isset($_GET['eliminar_publicacion'])) {
                         <div class="cv-archivo curriculum">
                             <a href="../<?php echo $cv['pdf_url']; ?>" target="_blank" class="btn-ver-cv">Ver CV</a>
                              <a class="btn-ver-cv" href="buzon.php?eliminar_cv=<?php echo $cv['application_id'];?>" onclick="return confirm('¿Seguro que deseas eliminar este CV?');">Eliminar</a>
-                             <a class="btn-ver-cv" href="buzon.php?contactar_cv=<?php echo $cv['application_id']; ?>">Contactar</href=>
+                             <a class="btn-ver-cv" href="buzon.php?contactar_cv=<?php echo $cv['application_id']; ?>">Contactar</a>
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -206,6 +225,12 @@ if (isset($_GET['modificar_publicacion'])) {
 
 <!-- /////////////////////////////////////////////// QUERY MODIFICAR PUBLICACION /////////////////////////////////////// -->
 
+
+
+
+
+<!-- /////////////////////////////////////////////// QUERY MODIFICAR PUBLICACION /////////////////////////////////////// -->
+
 <?php
 if (isset($_POST['modificacion'])) {
     $titulo = mysqli_real_escape_string($conexion, $_POST['titulo']);
@@ -261,7 +286,7 @@ if (isset($_GET['leer_publicacion'])) {
         <button onclick="data.close()">Cancelar</button>
 </dialog>
 
-<!-- /////////////////////////////////////////////// QUERY MOSTRAR PUBLICACION /////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////// QUERY CONTACTO DE ASPIRANTE /////////////////////////////////////// -->
 
 <?php
 if (isset($_GET['contactar_cv'])) {
@@ -281,7 +306,7 @@ if (isset($_GET['contactar_cv'])) {
 
     echo '<script>
     window.addEventListener("DOMContentLoaded", function() {
-        showDataDialog();
+        showContactDialog();
     });// Se ejecuta automáticamente si la condición PHP se cumple
 </script>';
 
@@ -290,8 +315,8 @@ if (isset($_GET['contactar_cv'])) {
 
 <!-- /////////////////////////////////////////////// DIALOGO DE CONTACTO /////////////////////////////////////// -->
 
-<dialog id="contacto_dialog">
-         <div class="contactar-form">
+<dialog id="contact_dialog">
+        <div class="contactar-form">
         <h2>Contactar a <?php echo $contact_data['applicant_name'] . ' ' . $contact_data['applicant_lastname']; ?></h2>
         <form method="POST" action="">
             <input type="hidden" name="to_email" value="<?php echo $contact_data['applicant_email']; ?>">
@@ -302,7 +327,7 @@ if (isset($_GET['contactar_cv'])) {
             <input type="submit" name="enviar_correo" value="Enviar correo">
         </form>
         </div>
-        <button onclick="data.close()">Cancelar</button>
+        <button onclick="contact.close()">Cancelar</button>
 </dialog>
 
 
@@ -366,6 +391,14 @@ if (isset($_GET['contactar_cv'])) {
         function closeDataDialog() {
             data.close()
         }
+        const contact = document.getElementById("contact_dialog")
+        function showContactDialog() {
+            contact.showModal()
+        }
+        function closeContactDialog() {
+            contact.close()
+        }
+
     </script>
 
 
